@@ -2,7 +2,9 @@ name: Daily MusicMonday Sync
 
 on:
   schedule:
-    - cron: '0 12 * * 1'  # Every Monday at 12:00 UTC
+    - cron: '0 0 * * 2'   # Every Tuesday at 00:00 UTC (first sweep after Monday post)
+    - cron: '0 12 * * 4'  # Every Thursday at 12:00 UTC (mid-week sweep)
+    - cron: '0 23 * * 0'  # Every Sunday at 23:00 UTC (final sweep before next post)
   workflow_dispatch:
     inputs:
       dry_run:
