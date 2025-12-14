@@ -61,9 +61,10 @@ See it in action:
 Open source and contributor-friendly. Test locally with `ruby main.rb` before submitting PRs. Don't commit `.env`.
 
 ## Roadmap / Ideas
+- Vibe-based routing: auto-route tracks into multiple playlists using Gemini to classify by vibe from artist/title (prototype), with an optional upgrade to factor Spotify audio features for more robust decisions.
 - YouTube playlist mirroring: create/update a YouTube playlist with matched tracks alongside Spotify.
 - Bandcamp & SoundCloud support: detect embeds/links and add best-effort mapping to Spotify.
-- Cover art generation: explore using Forem’s cover-art generator to produce playlist images (research Forem API and the cover-art feature to integrate safely).
+- Cover art generation: explore using Forem’s cover-art generator to produce playlist images.
 - Improved matching: confidence scoring, artist verification, and fallback searches.
 - Observability: richer logs, metrics, and summaries in Actions output.
 - Configurability: per-run flags (e.g., source username, article limit), and environment overrides.
