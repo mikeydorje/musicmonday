@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: '0 12 * * 1'  # Every Monday at 12:00 UTC
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Set to true to log matches without adding tracks"
+        required: false
+        default: "false"
+        type: boolean
 
 jobs:
   sync:
@@ -27,4 +33,5 @@ jobs:
           SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
           SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
           PLAYLIST_ID: ${{ secrets.PLAYLIST_ID }}
-        run: ruby main.rb
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run == 'true' && '1' || '' }}
+        run: bundle exec ruby main.rb
