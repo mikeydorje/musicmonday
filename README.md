@@ -68,3 +68,4 @@ Open source and contributor-friendly. Test locally with `ruby main.rb` before su
 - Improved matching: confidence scoring, artist verification, and fallback searches.
 - Observability: richer logs, metrics, and summaries in Actions output.
 - Configurability: per-run flags (e.g., source username, article limit), and environment overrides.
+- Ideas welcome: open to feature requests, matching tweaks, or new sources/playlists.
